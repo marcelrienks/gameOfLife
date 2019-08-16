@@ -1,6 +1,5 @@
 import sys
 import time
-import random
 from helpers.printHelper import PrintHelper
 from helpers.dataSetHelper import DataSetHelper
 
@@ -12,10 +11,13 @@ def main():
         if numberOfLiveCells < 0 or numberOfLiveCells > 100:
             raise Exception()
 
-        DataSetHelper.generateRandomSeed(numberOfLiveCells)
+        DataSetHelper.generateRandomDataSet(numberOfLiveCells)
+        
+    except ValueError:
+      print('Input is not valid. Number must be between 1 - 100')
 
-    except:
-        print('Input is not valid. Number must be between 1 - 100')
+    except Exception as ex:
+      print('Exception:', ex)
 
 if __name__ == '__main__':
   main()
