@@ -7,24 +7,32 @@ from helpers.mathHelper import MathHelper
 def main():
     PrintHelper.clearScreen()
 
-    gridInput = int(input("Please enter the size of the grid, and the number of live cells to seed (i.e. size:seed) (note size must be an even number).\n"))
+    gridInput = input("Please enter the size of the grid, and the number of live cells to seed (i.e. size:seed).\n")
     size, seed = validateGridInput(gridInput)
 
-    if gridSize < 0 or gridSize > 100:
-        raise Exception()
-
-    grid = GridHelper.generateRandomGridMethod2(gridSize)
+    grid = GridHelper.generateRandomGridMethod2(size, seed)
     PrintHelper.printDataSet(grid)
 
 def validateGridInput(gridInput):
     if ":" not in gridInput:
-        raise Exception ('Invalid input, format must be size:seed (e.g. 100:7)')
+        raise Exception ('Invalid input format, must be size:seed (e.g. 100:7)')
 
     size = gridInput.split(':')[0]
     seed = gridInput.split(':')[1]
 
-    if not MathHelper.isValueEven(size) or :
-        raise Exception ('Invalid input, format must be size:seed (e.g. 100:7)')
+    if not MathHelper.isInt(size) and not MathHelper.isInt(seed):
+        raise Exception ('Invalid input type, both size and seed must be integers (e.g. 100:7)')
+
+    size = int(size)
+    seed = int(seed)
+
+    if seed > size:
+        raise Exception ('Invalid input seed, must be smaller than size (e.g. 100:7)')
+
+    if not MathHelper.isValueEven(size):
+        raise Exception ('Invalid input size, must be an even number (e.g. 100:7)')
+
+    return size, seed
 
 if __name__ == '__main__':
     try:

@@ -23,14 +23,14 @@ class GridHelper:
         return grid
     
     @staticmethod
-    def generateRandomGridMethod2(numberOfLiveCells):
+    def generateRandomGridMethod2(size, seed):
         # Create empty grid
         grid = []
         for _ in range(10):
             grid.append([0] * 10)
 
         # seed the grid
-        for _ in range(numberOfLiveCells):
+        for _ in range(seed):
             while True:
                 row = random.randint(0,9)
                 cell = random.randint(0,9)
