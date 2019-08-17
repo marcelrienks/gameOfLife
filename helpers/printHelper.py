@@ -15,11 +15,11 @@ class PrintHelper:
     
     # convert the dataset to a grid, and print it on the console
     @staticmethod
-    def printDataSet(dataSet):
+    def printGrid(grid):
         PrintHelper.clearScreen()
-        for dataRow in dataSet:
+        for row in grid:
             printRow = ''
-            for dataElement in dataRow:
-                printRow += '□ ' if dataElement == 0 else '■ '
+            for element in row:
+                printRow += '□ ' if element == 0 else '■ '
                 printRow.strip()
             print(printRow)

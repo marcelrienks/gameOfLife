@@ -4,7 +4,7 @@ import math
 class GridHelper:
     
     @staticmethod
-    def generateRandomGrid(size, seed):
+    def generateSeedGrid(size, seed):
         # Create empty grid
         grid = []
         for _ in range(size):
