@@ -1,26 +1,37 @@
 import sys
 import time
 from helpers.printHelper import PrintHelper
-from helpers.dataSetHelper import DataSetHelper
+from helpers.gridHelper import GridHelper
+from helpers.mathHelper import MathHelper
 
 def main():
-    try:
-        PrintHelper.clearScreen()
+    PrintHelper.clearScreen()
 
-        numberOfLiveCells = int(input("Please enter the number of live cells (between 1 - 100) that will be randomly generated for the seed.\n"))
-        if numberOfLiveCells < 0 or numberOfLiveCells > 100:
-            raise Exception()
+    gridInput = int(input("Please enter the size of the grid, and the number of live cells to seed (i.e. size:seed) (note size must be an even number).\n"))
+    size, seed = validateGridInput(gridInput)
 
-        DataSetHelper.generateRandomDataSet(numberOfLiveCells)
-        
-    except ValueError:
-      print('Input is not valid. Number must be between 1 - 100')
+    if gridSize < 0 or gridSize > 100:
+        raise Exception()
 
-    except Exception as ex:
-      print('Exception:', ex)
+    grid = GridHelper.generateRandomGridMethod2(gridSize)
+    PrintHelper.printDataSet(grid)
+
+def validateGridInput(gridInput):
+    if ":" not in gridInput:
+        raise Exception ('Invalid input, format must be size:seed (e.g. 100:7)')
+
+    size = gridInput.split(':')[0]
+    seed = gridInput.split(':')[1]
+
+    if not MathHelper.isValueEven(size) or :
+        raise Exception ('Invalid input, format must be size:seed (e.g. 100:7)')
 
 if __name__ == '__main__':
-  main()
+    try:
+        main()
+
+    except Exception as ex:
+        print('Exception:', ex)
 
 # Test
 # dataSet = [[0,0,1,0,1,0,0,1,0,0],[0,0,0,1,0,1,0,0,1,0],[0,0,1,0,0,0,0,1,0,0],[0,0,0,0,1,1,1,1,1,0],[0,0,0,0,0,0,0,0,0,0],[0,1,1,1,0,0,0,1,1,0],[0,0,0,1,0,0,0,0,0,1],[1,1,1,1,1,0,0,0,0,0],[0,1,0,0,1,0,0,0,1,0],[0,1,0,0,1,0,1,0,0,0]]
