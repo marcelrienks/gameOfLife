@@ -23,3 +23,8 @@ class PrintHelper:
                 printRow += '□ ' if element == 0 else '■ '
                 printRow.strip()
             print(printRow)
+    
+    @staticmethod
+    def printGridLifeCycle(grid, iteration):
+        PrintHelper.printGrid(grid)
+        print('\nLifecycle', iteration, ':')

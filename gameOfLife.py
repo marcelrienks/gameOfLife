@@ -3,15 +3,17 @@ import time
 from helpers.printHelper import PrintHelper
 from helpers.gridHelper import GridHelper
 from helpers.mathHelper import MathHelper
+from handlers.gameHandler import GameHandler
+
+#TODO create a cell model that will contain coordinates as well as value
 
 def main():
     # Generate seed grid
     grid = preload()
 
     # Run
-    run(grid)
-
-    #TODO: Run the game of life
+    gameHandler = GameHandler(grid)
+    gameHandler.run()
     
 def preload():
     PrintHelper.clearScreen()
@@ -51,9 +53,6 @@ def validateGridInput(gridInput):
         raise Exception ('Invalid input seed, must be smaller than the square of the size (e.g. 10:15)')
 
     return size, seed
-
-def run(grid):
-    pass
 
 if __name__ == '__main__':
     try:
