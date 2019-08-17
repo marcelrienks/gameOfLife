@@ -7,10 +7,10 @@ from helpers.mathHelper import MathHelper
 def main():
     PrintHelper.clearScreen()
 
-    gridInput = input("Please enter the size of the grid, and the number of live cells to seed (i.e. size:seed).\n")
+    gridInput = input("Please enter the size and seed of the grid, split by a colon.\nSize will be used as the length of the grid in both directions.\nSeed will the number of live cells to start with, placed in random locations.\n(i.e. size:seed).\n")
     size, seed = validateGridInput(gridInput)
 
-    grid = GridHelper.generateRandomGridMethod2(size, seed)
+    grid = GridHelper.generateRandomGrid(size, seed)
     PrintHelper.printDataSet(grid)
 
 def validateGridInput(gridInput):
@@ -28,9 +28,6 @@ def validateGridInput(gridInput):
 
     if seed > size:
         raise Exception ('Invalid input seed, must be smaller than size (e.g. 100:7)')
-
-    if not MathHelper.isValueEven(size):
-        raise Exception ('Invalid input size, must be an even number (e.g. 100:7)')
 
     return size, seed
 
