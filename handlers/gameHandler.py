@@ -23,7 +23,7 @@ class GameHandler():
             # Print the new grid
             iteration += 1
             PrintHelper.printGridLifeCycle(self.grid, iteration)
-            time.sleep(1)
+            time.sleep(0.3)
 
         print('Complete!')
     

@@ -1,2 +1,2 @@
 # gameOfLife
-python app to test Conway's game of life
+python app to test out Conway's game of life
