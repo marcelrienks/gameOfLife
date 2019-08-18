@@ -1,12 +1,10 @@
 import sys
-import time
 from helpers.printHelper import PrintHelper
 from helpers.gridHelper import GridHelper
 from helpers.mathHelper import MathHelper
 from handlers.gameHandler import GameHandler
 
-#TODO create a cell model that will contain coordinates as well as value
-
+# Main method
 def main():
     # Generate seed grid
     grid = preload()
@@ -14,7 +12,8 @@ def main():
     # Run
     gameHandler = GameHandler(grid)
     gameHandler.run()
-    
+
+# Collect input, and preload seed grid    
 def preload():
     PrintHelper.clearScreen()
 
@@ -33,6 +32,7 @@ def preload():
     else:
         return preload()
 
+# Validate input variables
 def validateGridInput(gridInput):
     # Validate that there is a split character
     if ":" not in gridInput:

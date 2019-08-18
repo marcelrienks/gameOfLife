@@ -13,7 +13,7 @@ class PrintHelper:
         else:
             _ = system('clear')
     
-    # convert the dataset to a grid, and print it on the console
+    # Convert the dataset to a grid, and print it on the console
     @staticmethod
     def printGrid(grid):
         PrintHelper.clearScreen()
@@ -24,7 +24,8 @@ class PrintHelper:
                 printRow.strip()
             print(printRow)
     
+    # Print the next lifecycle grid
     @staticmethod
     def printGridLifeCycle(grid, iteration):
         PrintHelper.printGrid(grid)
-        print('\nLifecycle', iteration, ':')
+        print('\nLifecycle', iteration)
