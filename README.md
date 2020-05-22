@@ -1,3 +1,5 @@
+![build](https://github.com/marcelrienks/gameOfLife/workflows/build/badge.svg)
+
 # gameOfLife
 python app to test out Conway's game of life
 
