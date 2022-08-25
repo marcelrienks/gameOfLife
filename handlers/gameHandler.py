@@ -30,12 +30,12 @@ class GameHandler():
     # Calculate the next life cycle grid
     def calculateNextLifeCycle(self, currentGrid):
         change = False
-        newGrid = GridHelper.generateEmptyGrid(len(currentGrid))
+        newGrid = GridHelper.generateEmptyGrid(len(currentGrid[0]), len(currentGrid))
 
         for rowCoordinate in range(len(currentGrid)):
             for columnCoordinate in range(len(currentGrid[rowCoordinate])):
                 # Get all the neighbours for the current grid cell
-                neighbourCoordinates = GridHelper.getCellNeighbourCoordinates(len(currentGrid), rowCoordinate, columnCoordinate)
+                neighbourCoordinates = GridHelper.getCellNeighbourCoordinates(len(currentGrid[0]), len(currentGrid), rowCoordinate, columnCoordinate)
 
                 # count number of live neighbours
                 liveNeighbours = 0
