@@ -8,5 +8,6 @@ From the root directory, in a command prompt, type the following to launch the a
 `python gameOfLife.py`
 
 ## Grid Size
-The grid size input is the length of one side of the grid (horizontally or vertically).
-i.e. a size of 10, will produce a grid of 100 cells (10 x 10)
+The grid size input is the horizontal, and vertical size, followed by the seed.
+i.e. a size of 10 horizontally, and 5 vertially, with a seed of 27, will look as follows
+`10x5:27`
