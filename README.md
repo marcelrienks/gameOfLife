@@ -4,8 +4,8 @@
 python app to test out Conway's game of life
 
 ## How to use it
-From the root directory, in command prompt, and type following command to launch the app, and follow instructions.
-`python gameOfLige.py`
+From the root directory, in a command prompt, type the following to launch the app, following the instructions to run.
+`python gameOfLife.py`
 
 ## Grid Size
 The grid size input is the length of one side of the grid (horizontally or vertically).
